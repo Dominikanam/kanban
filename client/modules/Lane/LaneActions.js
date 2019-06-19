@@ -36,6 +36,14 @@ export function updateLane(lane) {
   };
 }
 
+export function updateLaneRequest(lane) {
+  return (dispatch) => {
+    return callApi(`lane/${lane.id}`, 'put', { name: lane.name }).then(() => {
+      dispatch(updateLane(lane));
+    });
+  };
+}
+
 export function deleteLane(laneId) {
   return {
     type: DELETE_LANE,
@@ -43,10 +51,18 @@ export function deleteLane(laneId) {
   };
 }
 
+export function deleteLaneRequest(laneId) {
+  return (dispatch) => {
+    return callApi(`lanes/${laneId}`, 'delete').then(() => {
+      dispatch(deleteLane(laneId));
+    });
+  };
+}
+
 export function editLane(laneId) {
   return {
     type: EDIT_LANE,
-    laneId,
+    id: laneId,
   };
 }
 

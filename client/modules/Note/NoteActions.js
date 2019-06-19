@@ -40,10 +40,26 @@ export function deleteNote(noteId, laneId) {
   };
 }
 
+export function deleteNoteRequest(noteId, laneId) {
+  return (dispatch) => {
+    return callApi(`note/${noteId}`, 'delete').then(() => {
+      dispatch(deleteNote(noteId, laneId));
+    });
+  };
+}
+
 export function editNote(noteId) {
   return {
     type: EDIT_NOTE,
-    noteId,
+    id: noteId,
+  };
+}
+
+export function updateNoteRequest(note) {
+  return (dispatch) => {
+    return callApi(`note/${note.id}`, 'put', { task: note.task }).then(() => {
+      dispatch(updateNote(note));
+    });
   };
 }
 
