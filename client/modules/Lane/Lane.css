@@ -1,3 +1,46 @@
-.root {
-	display: block;
+.Lanes {
+	display: flex;
+	overflow-y: auto;
+	align-items: flex-start;
+}
+
+.Lane {
+	background: rgba(0, 0, 255, 0.3);
+	width: 300px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 15px;
+	box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.Lane .LaneHeader {
+	display: flex;
+}
+
+.Lane .LaneHeader .LaneAddNote button,
+.Lane .LaneHeader .LaneDelete button,
+.AddLane {
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+.Lane .LaneHeader .LaneAddNote button, .AddLane {
+	background-color: white;
+}
+
+.Lane .LaneHeader .LaneDelete button {
+	color: white;
+	background-color: grey;
+}
+
+.Lane .LaneHeader .LaneName {
+	flex: 1 100%;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	text-align: center;
 }

@@ -1,1 +1,26 @@
-/* Note styles */
+.Note {
+	list-style-type: none;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: rgba(0, 0, 222, 0.2);
+	margin: 10px;
+	border-radius: 10px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 2px 2px 2px #aaaaaa;
+}
+
+.Note button {
+	padding: 5px;
+	border-radius: 2px;
+	border: none;
+	box-shadow: 2px 2px 2px #aaaaaa;
+	color: red;
+	background-color: white;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
